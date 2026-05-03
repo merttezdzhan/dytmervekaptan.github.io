@@ -328,33 +328,25 @@ h1, h2, h3 {
   justify-content: center;
 }
 
-.about-image-placeholder {
+.about-image-wrap-inner {
   width: 320px;
   height: 400px;
-  background: linear-gradient(135deg, #c8d8c8 0%, #a8c0a8 100%);
   border-radius: var(--radius-lg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-serif);
-  font-size: 5rem;
-  font-style: italic;
-  color: rgba(255,255,255,0.8);
-  font-weight: 300;
-  box-shadow: var(--shadow-lg);
-  position: relative;
   overflow: hidden;
+  box-shadow: var(--shadow-lg);
 }
 
-.about-image-placeholder::before {
-  content: '';
-  position: absolute;
-  top: -30%;
-  left: -30%;
-  width: 80%;
-  height: 80%;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.1);
+.about-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.about-photo:hover {
+  transform: scale(1.03);
 }
 
 .about-text .section-label {
