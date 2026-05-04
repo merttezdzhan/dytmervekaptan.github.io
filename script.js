@@ -29,45 +29,7 @@ navLinks.querySelectorAll('a').forEach(link => {
   });
 });
 
-// ========================
-// CALORIE CALCULATOR
-// ========================
-function calculateCalories() {
-  const age      = parseFloat(document.getElementById('calc-age').value);
-  const gender   = document.getElementById('calc-gender').value;
-  const weight   = parseFloat(document.getElementById('calc-weight').value);
-  const height   = parseFloat(document.getElementById('calc-height').value);
-  const activity = parseFloat(document.getElementById('calc-activity').value);
 
-  if (!age || !weight || !height || age < 10 || age > 100 || weight < 30 || height < 100) {
-    alert('Lütfen geçerli değerler girin.');
-    return;
-  }
-
-  // Mifflin-St Jeor Denklemi
-  let bmr;
-  if (gender === 'female') {
-    bmr = 10 * weight + 6.25 * height - 5 * age - 161;
-  } else {
-    bmr = 10 * weight + 6.25 * height - 5 * age + 5;
-  }
-
-  const tdee     = Math.round(bmr * activity);
-  const lose     = Math.round(tdee - 500);
-  const gain     = Math.round(tdee + 500);
-
-  document.getElementById('result-tdee').textContent     = tdee.toLocaleString('tr-TR');
-  document.getElementById('result-maintain').textContent = tdee.toLocaleString('tr-TR');
-  document.getElementById('result-lose').textContent     = lose.toLocaleString('tr-TR');
-  document.getElementById('result-gain').textContent     = gain.toLocaleString('tr-TR');
-
-  const resultEl = document.getElementById('calcResult');
-  resultEl.style.display = 'flex';
-  resultEl.style.flexDirection = 'column';
-  resultEl.style.justifyContent = 'center';
-  resultEl.style.alignItems = 'center';
-  resultEl.style.textAlign = 'center';
-}
 
 // ========================
 // CONTACT FORM
